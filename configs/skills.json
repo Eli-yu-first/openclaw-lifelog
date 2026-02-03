@@ -1,0 +1,33 @@
+{
+  "skills": {
+    "lifelog-capture": {
+      "enabled": true,
+      "description": "Captures and analyzes user behavior from camera",
+      "triggers": ["capture", "record", "watch"],
+      "config": {
+        "captureInterval": 300,
+        "analysisEndpoint": "http://localhost:5000/analyze"
+      }
+    },
+    "habit-tracker": {
+      "enabled": true,
+      "description": "Tracks and analyzes daily habits",
+      "triggers": ["habit", "routine", "track"],
+      "config": {
+        "categories": ["dental", "morning", "work", "departure", "health"]
+      }
+    },
+    "smart-reminder": {
+      "enabled": true,
+      "description": "Sends intelligent reminders based on habits",
+      "triggers": ["remind", "alert", "notify"],
+      "config": {
+        "channels": ["whatsapp", "telegram"],
+        "quietHours": {
+          "start": "22:00",
+          "end": "07:00"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "camera": {
+    "enabled": true,
+    "clipDuration": 10,
+    "format": "mp4",
+    "quality": "medium",
+    "autoCapture": {
+      "enabled": true,
+      "intervalSeconds": 300,
+      "activeHours": {
+        "start": "06:00",
+        "end": "23:00"
+      }
+    },
+    "privacy": {
+      "saveRawVideo": false,
+      "deleteAfterAnalysis": true,
+      "excludeLocations": []
+    },
+    "analysis": {
+      "endpoint": "http://localhost:5000/analyze",
+      "timeout": 30000,
+      "retryAttempts": 3
+    }
+  }
+}

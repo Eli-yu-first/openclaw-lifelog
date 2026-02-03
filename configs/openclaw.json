@@ -1,4 +1,5 @@
 {
+  "$schema": "https://docs.openclaw.ai/schemas/openclaw.json",
   "agents": {
     "defaults": {
       "model": "anthropic/claude-sonnet-4-5",
@@ -17,6 +18,10 @@
       "subagents": {
         "maxConcurrent": 8,
         "archiveAfterMinutes": 60
+      },
+      "sandbox": {
+        "mode": "docker",
+        "image": "openclaw/sandbox:latest"
       }
     },
     "list": [
@@ -27,7 +32,12 @@
         "workspace": "~/.openclaw/workspace-master",
         "sandbox": { "mode": "off" },
         "subagents": {
-          "allowAgents": ["morning-routine", "dental-hygiene", "work-life", "departure", "health"]
+          "allowAgents": ["morning-routine", "dental-hygiene", "work-life", "departure", "health", "data-acquisition"]
+        },
+        "tools": {
+          "browser": { "enabled": true },
+          "exec": { "enabled": true },
+          "camera": { "enabled": true }
         }
       },
       {
@@ -64,7 +74,10 @@
         "id": "data-acquisition",
         "name": "Data Acquisition Agent",
         "workspace": "~/.openclaw/workspace-data",
-        "model": "anthropic/claude-sonnet-4-5"
+        "model": "anthropic/claude-sonnet-4-5",
+        "tools": {
+          "camera": { "enabled": true }
+        }
       }
     ]
   },
@@ -72,14 +85,51 @@
     "agentToAgent": {
       "enabled": true,
       "allow": ["master-habit", "morning-routine", "dental-hygiene", "work-life", "departure", "health", "data-acquisition"]
+    },
+    "browser": {
+      "enabled": true,
+      "headless": true
+    },
+    "exec": {
+      "enabled": true,
+      "timeout": 30000
+    },
+    "camera": {
+      "enabled": true,
+      "clipDuration": 10
+    },
+    "web": {
+      "enabled": true
     }
   },
   "channels": {
     "whatsapp": {
-      "enabled": true
+      "enabled": true,
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      }
     },
     "telegram": {
-      "enabled": true
+      "enabled": true,
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      }
+    },
+    "discord": {
+      "enabled": false,
+      "comment": "Set to true and configure bot token to enable"
+    },
+    "slack": {
+      "enabled": false,
+      "comment": "Set to true and configure app credentials to enable"
+    },
+    "imessage": {
+      "enabled": false,
+      "comment": "macOS only - requires imsg CLI"
     }
   },
   "bindings": [
@@ -90,6 +140,55 @@
     {
       "agentId": "master-habit",
       "match": { "channel": "telegram" }
+    },
+    {
+      "agentId": "master-habit",
+      "match": { "channel": "discord" }
     }
-  ]
+  ],
+  "messages": {
+    "groupChat": {
+      "mentionPatterns": ["@openclaw", "@lifelog", "@assistant"]
+    }
+  },
+  "providers": {
+    "anthropic": {
+      "enabled": true,
+      "models": ["claude-sonnet-4-5", "claude-sonnet-4-20250514"]
+    },
+    "openai": {
+      "enabled": true,
+      "models": ["gpt-4o", "gpt-4o-mini"]
+    },
+    "openrouter": {
+      "enabled": false,
+      "comment": "Set API key to enable"
+    }
+  },
+  "skills": {
+    "enabled": true,
+    "autoLoad": true,
+    "directory": "~/.openclaw/skills"
+  },
+  "plugins": {
+    "enabled": true,
+    "directory": "~/.openclaw/plugins"
+  },
+  "webhooks": {
+    "enabled": true,
+    "endpoints": []
+  },
+  "sessions": {
+    "pruning": {
+      "enabled": true,
+      "maxAge": "7d",
+      "maxCount": 100
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "canvasHost": {
+      "port": 18793
+    }
+  }
 }

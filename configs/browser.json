@@ -1,0 +1,23 @@
+{
+  "browser": {
+    "enabled": true,
+    "headless": true,
+    "timeout": 30000,
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "userAgent": "OpenClaw-LifeLog/1.0",
+    "permissions": {
+      "geolocation": false,
+      "notifications": false,
+      "camera": false,
+      "microphone": false
+    },
+    "blocklist": [],
+    "cookies": {
+      "persist": true,
+      "path": "~/.openclaw/browser/cookies"
+    }
+  }
+}

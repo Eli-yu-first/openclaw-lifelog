@@ -1,0 +1,36 @@
+{
+  "webhooks": {
+    "behavior-detected": {
+      "enabled": true,
+      "description": "Triggered when HAR service detects a behavior",
+      "url": "http://localhost:18789/api/webhook/behavior",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "events": ["behavior.detected", "behavior.completed"],
+      "retry": {
+        "maxAttempts": 3,
+        "backoffMs": 1000
+      }
+    },
+    "habit-anomaly": {
+      "enabled": true,
+      "description": "Triggered when habit anomaly is detected",
+      "url": "http://localhost:18789/api/webhook/anomaly",
+      "method": "POST",
+      "events": ["habit.anomaly", "habit.missed"],
+      "retry": {
+        "maxAttempts": 3,
+        "backoffMs": 1000
+      }
+    },
+    "daily-summary": {
+      "enabled": true,
+      "description": "Triggered for daily habit summary",
+      "url": "http://localhost:18789/api/webhook/summary",
+      "method": "POST",
+      "events": ["summary.daily", "summary.weekly"]
+    }
+  }
+}
