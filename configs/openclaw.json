@@ -1,0 +1,95 @@
+{
+  "agents": {
+    "defaults": {
+      "model": "anthropic/claude-sonnet-4-5",
+      "memorySearch": {
+        "enabled": true,
+        "provider": "openai",
+        "model": "text-embedding-3-small",
+        "query": {
+          "hybrid": {
+            "enabled": true,
+            "vectorWeight": 0.7,
+            "textWeight": 0.3
+          }
+        }
+      },
+      "subagents": {
+        "maxConcurrent": 8,
+        "archiveAfterMinutes": 60
+      }
+    },
+    "list": [
+      {
+        "id": "master-habit",
+        "default": true,
+        "name": "Master Habit Agent",
+        "workspace": "~/.openclaw/workspace-master",
+        "sandbox": { "mode": "off" },
+        "subagents": {
+          "allowAgents": ["morning-routine", "dental-hygiene", "work-life", "departure", "health"]
+        }
+      },
+      {
+        "id": "morning-routine",
+        "name": "Morning Routine Agent",
+        "workspace": "~/.openclaw/workspace-morning",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "dental-hygiene",
+        "name": "Dental Hygiene Agent",
+        "workspace": "~/.openclaw/workspace-dental",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "work-life",
+        "name": "Work Life Agent",
+        "workspace": "~/.openclaw/workspace-work",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "departure",
+        "name": "Departure Agent",
+        "workspace": "~/.openclaw/workspace-departure",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "health",
+        "name": "Health Agent",
+        "workspace": "~/.openclaw/workspace-health",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "data-acquisition",
+        "name": "Data Acquisition Agent",
+        "workspace": "~/.openclaw/workspace-data",
+        "model": "anthropic/claude-sonnet-4-5"
+      }
+    ]
+  },
+  "tools": {
+    "agentToAgent": {
+      "enabled": true,
+      "allow": ["master-habit", "morning-routine", "dental-hygiene", "work-life", "departure", "health", "data-acquisition"]
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "enabled": true
+    },
+    "telegram": {
+      "enabled": true
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "master-habit",
+      "match": { "channel": "whatsapp" }
+    },
+    {
+      "agentId": "master-habit",
+      "match": { "channel": "telegram" }
+    }
+  ]
+}

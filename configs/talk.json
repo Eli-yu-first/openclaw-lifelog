@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "tts": {
+    "provider": "elevenlabs",
+    "voice": "rachel",
+    "model": "eleven_multilingual_v2"
+  },
+  "stt": {
+    "provider": "whisper",
+    "model": "whisper-1"
+  },
+  "interruptible": true,
+  "streamingResponse": true,
+  "silenceThresholdMs": 1500
+}

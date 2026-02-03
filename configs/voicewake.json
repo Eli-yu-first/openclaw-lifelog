@@ -1,0 +1,5 @@
+{
+  "triggers": ["siri", "openclaw", "hey assistant"],
+  "sensitivity": 0.5,
+  "updatedAtMs": 1738540800000
+}
