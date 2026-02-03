@@ -16,7 +16,7 @@
         }
       },
       "subagents": {
-        "maxConcurrent": 8,
+        "maxConcurrent": 16,
         "archiveAfterMinutes": 60
       },
       "sandbox": {
@@ -32,7 +32,23 @@
         "workspace": "~/.openclaw/workspace-master",
         "sandbox": { "mode": "off" },
         "subagents": {
-          "allowAgents": ["morning-routine", "dental-hygiene", "work-life", "departure", "health", "data-acquisition"]
+          "allowAgents": [
+            "health-fitness",
+            "nutrition-diet",
+            "sleep-rest",
+            "social-communication",
+            "entertainment-leisure",
+            "learning-education",
+            "finance-shopping",
+            "home-environment",
+            "transportation-travel",
+            "personal-care",
+            "productivity-focus",
+            "emotional-wellness",
+            "morning-routine",
+            "departure",
+            "data-acquisition"
+          ]
         },
         "tools": {
           "browser": { "enabled": true },
@@ -41,33 +57,87 @@
         }
       },
       {
+        "id": "health-fitness",
+        "name": "Health & Fitness Agent",
+        "workspace": "~/.openclaw/workspace-health-fitness",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "nutrition-diet",
+        "name": "Nutrition & Diet Agent",
+        "workspace": "~/.openclaw/workspace-nutrition",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "sleep-rest",
+        "name": "Sleep & Rest Agent",
+        "workspace": "~/.openclaw/workspace-sleep",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "social-communication",
+        "name": "Social & Communication Agent",
+        "workspace": "~/.openclaw/workspace-social",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "entertainment-leisure",
+        "name": "Entertainment & Leisure Agent",
+        "workspace": "~/.openclaw/workspace-entertainment",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "learning-education",
+        "name": "Learning & Education Agent",
+        "workspace": "~/.openclaw/workspace-learning",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "finance-shopping",
+        "name": "Finance & Shopping Agent",
+        "workspace": "~/.openclaw/workspace-finance",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "home-environment",
+        "name": "Home & Environment Agent",
+        "workspace": "~/.openclaw/workspace-home",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "transportation-travel",
+        "name": "Transportation & Travel Agent",
+        "workspace": "~/.openclaw/workspace-transport",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "personal-care",
+        "name": "Personal Care Agent",
+        "workspace": "~/.openclaw/workspace-personal",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "productivity-focus",
+        "name": "Productivity & Focus Agent",
+        "workspace": "~/.openclaw/workspace-productivity",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
+        "id": "emotional-wellness",
+        "name": "Emotional Wellness Agent",
+        "workspace": "~/.openclaw/workspace-emotional",
+        "model": "anthropic/claude-sonnet-4-5"
+      },
+      {
         "id": "morning-routine",
         "name": "Morning Routine Agent",
         "workspace": "~/.openclaw/workspace-morning",
         "model": "anthropic/claude-sonnet-4-5"
       },
       {
-        "id": "dental-hygiene",
-        "name": "Dental Hygiene Agent",
-        "workspace": "~/.openclaw/workspace-dental",
-        "model": "anthropic/claude-sonnet-4-5"
-      },
-      {
-        "id": "work-life",
-        "name": "Work Life Agent",
-        "workspace": "~/.openclaw/workspace-work",
-        "model": "anthropic/claude-sonnet-4-5"
-      },
-      {
         "id": "departure",
         "name": "Departure Agent",
         "workspace": "~/.openclaw/workspace-departure",
-        "model": "anthropic/claude-sonnet-4-5"
-      },
-      {
-        "id": "health",
-        "name": "Health Agent",
-        "workspace": "~/.openclaw/workspace-health",
         "model": "anthropic/claude-sonnet-4-5"
       },
       {
@@ -84,7 +154,24 @@
   "tools": {
     "agentToAgent": {
       "enabled": true,
-      "allow": ["master-habit", "morning-routine", "dental-hygiene", "work-life", "departure", "health", "data-acquisition"]
+      "allow": [
+        "master-habit",
+        "health-fitness",
+        "nutrition-diet",
+        "sleep-rest",
+        "social-communication",
+        "entertainment-leisure",
+        "learning-education",
+        "finance-shopping",
+        "home-environment",
+        "transportation-travel",
+        "personal-care",
+        "productivity-focus",
+        "emotional-wellness",
+        "morning-routine",
+        "departure",
+        "data-acquisition"
+      ]
     },
     "browser": {
       "enabled": true,
