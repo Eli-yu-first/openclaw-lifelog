@@ -1,0 +1,25 @@
+export const themeColors: {
+  primary:    { light: string; dark: string };
+  accent:     { light: string; dark: string };
+  background: { light: string; dark: string };
+  surface:    { light: string; dark: string };
+  surface2:   { light: string; dark: string };
+  foreground: { light: string; dark: string };
+  muted:      { light: string; dark: string };
+  border:     { light: string; dark: string };
+  success:    { light: string; dark: string };
+  warning:    { light: string; dark: string };
+  error:      { light: string; dark: string };
+  ring1:      { light: string; dark: string };
+  ring2:      { light: string; dark: string };
+  ring3:      { light: string; dark: string };
+  mood1:      { light: string; dark: string };
+  mood2:      { light: string; dark: string };
+  mood3:      { light: string; dark: string };
+};
+
+declare const themeConfig: {
+  themeColors: typeof themeColors;
+};
+
+export default themeConfig;
