@@ -280,9 +280,8 @@ function QuadBentoGrid() {
             <View style={[styles.bentoIconBg, { backgroundColor: card.iconBg }]}>
               <Text style={styles.bentoCardEmoji}>{card.icon}</Text>
             </View>
-            <Text style={[styles.quadCardTitle, { color: colors.foreground }]}>{card.title}</Text>
-            <Text style={[styles.quadCardValue, { color: card.valueColor }]}>{card.value}</Text>
-            <Text style={[styles.quadCardSub, { color: colors.muted }]} numberOfLines={1}>{card.sub}</Text>
+            <Text style={[styles.quadCardTitle, { color: colors.foreground }]} numberOfLines={2}>{card.title}</Text>
+            <Text style={[styles.quadCardValue, { color: card.valueColor }]} numberOfLines={1} adjustsFontSizeToFit>{card.value}</Text>
           </Pressable>
         ))}
       </View>
@@ -481,10 +480,10 @@ const styles = StyleSheet.create({
   bentoCardValue: { fontSize: 22, fontWeight: "700", letterSpacing: -0.5 },
   bentoCardSub: { fontSize: 14, fontWeight: "400" },
   // 四宫格卡片
-  quadGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10, marginBottom: 12 },
-  quadCard: { width: "47.5%", borderRadius: 18, padding: 14, shadowColor: "#000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.06, shadowRadius: 10, elevation: 2 },
-  quadCardTitle: { fontSize: 13, fontWeight: "600", marginTop: 8, marginBottom: 2 },
-  quadCardValue: { fontSize: 22, fontWeight: "800", letterSpacing: -0.5, marginBottom: 2 },
+  quadGrid: { flexDirection: "row", gap: 8, marginBottom: 12 },
+  quadCard: { flex: 1, borderRadius: 16, padding: 10, shadowColor: "#000", shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.06, shadowRadius: 10, elevation: 2, minWidth: 0 },
+  quadCardTitle: { fontSize: 12, fontWeight: "600", marginTop: 6, marginBottom: 3, lineHeight: 16 },
+  quadCardValue: { fontSize: 16, fontWeight: "800", letterSpacing: -0.5 },
   quadCardSub: { fontSize: 14, fontWeight: "400" },
 
   // 体态卡片
