@@ -52,6 +52,7 @@ const MAPPING = {
   "moon.fill":                           "bedtime",
   "sun.max.fill":                        "wb-sunny",
   "cloud.fill":                          "cloud",
+  "cloud.sun.fill":                      "wb-cloudy",
   "trash.fill":                          "delete",
   "arrow.clockwise":                     "refresh",
   "mic.fill":                            "mic",

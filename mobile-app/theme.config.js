@@ -1,26 +1,26 @@
 /** @type {const} */
 const themeColors = {
-  // 基础色
-  primary:    { light: '#5B6EFF', dark: '#7B8FFF' },
-  accent:     { light: '#FF6B9D', dark: '#FF8DB5' },
-  background: { light: '#F8F9FB', dark: '#0E0F11' },
-  surface:    { light: '#FFFFFF', dark: '#1A1B1E' },
-  surface2:   { light: '#F2F3F7', dark: '#242629' },
-  foreground: { light: '#0D0F12', dark: '#F0F1F3' },
-  muted:      { light: '#8A8F9A', dark: '#5E6370' },
-  border:     { light: '#E8EAEF', dark: '#2A2C31' },
-  // 状态色
-  success:    { light: '#00D4AA', dark: '#00E8BB' },
-  warning:    { light: '#FFB347', dark: '#FFCA7A' },
-  error:      { light: '#FF5A5A', dark: '#FF7A7A' },
-  // 健康三环色
-  ring1:      { light: '#5B6EFF', dark: '#7B8FFF' },  // 专注
-  ring2:      { light: '#FF6B9D', dark: '#FF8DB5' },  // 体态
-  ring3:      { light: '#00D4AA', dark: '#00E8BB' },  // 水分
-  // 情绪色
-  mood1:      { light: '#FFD93D', dark: '#FFE566' },  // 开心
-  mood2:      { light: '#6BCB77', dark: '#8FD99A' },  // 平静
-  mood3:      { light: '#FF6B6B', dark: '#FF8E8E' },  // 压力
+  // ─── 基础色（Apple Health 风格：纯净、高对比、精致） ───
+  primary:    { light: '#007AFF', dark: '#0A84FF' },   // iOS 系统蓝
+  accent:     { light: '#FF2D55', dark: '#FF375F' },   // iOS 系统粉
+  background: { light: '#F2F2F7', dark: '#000000' },   // iOS 系统灰/纯黑
+  surface:    { light: '#FFFFFF', dark: '#1C1C1E' },   // 卡片白/深灰
+  surface2:   { light: '#F2F2F7', dark: '#2C2C2E' },   // 次级表面
+  foreground: { light: '#000000', dark: '#FFFFFF' },   // 纯黑/纯白文字
+  muted:      { light: '#8E8E93', dark: '#636366' },   // iOS 次级灰
+  border:     { light: '#C6C6C8', dark: '#38383A' },   // iOS 分割线
+  // ─── 状态色（Apple Health 经典） ───
+  success:    { light: '#34C759', dark: '#30D158' },   // iOS 绿
+  warning:    { light: '#FF9500', dark: '#FF9F0A' },   // iOS 橙
+  error:      { light: '#FF3B30', dark: '#FF453A' },   // iOS 红
+  // ─── 健康三环色（Apple Watch 活动环） ───
+  ring1:      { light: '#FF2D55', dark: '#FF375F' },   // 活动 - 粉红
+  ring2:      { light: '#A2FF00', dark: '#B4FF33' },   // 锻炼 - 荧光绿
+  ring3:      { light: '#00C7BE', dark: '#00D4AA' },   // 站立 - 青色
+  // ─── 情绪色 ───
+  mood1:      { light: '#FFD60A', dark: '#FFD60A' },   // 开心 - 金黄
+  mood2:      { light: '#34C759', dark: '#30D158' },   // 平静 - 绿
+  mood3:      { light: '#FF3B30', dark: '#FF453A' },   // 压力 - 红
 };
 
 module.exports = { themeColors };
