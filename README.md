@@ -13,7 +13,7 @@ A comprehensive personal life recording and intelligent assistant system based o
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Compatible-blue.svg)](https://github.com/openclaw/openclaw)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22-green.svg)](https://nodejs.org/)
 [![GitHub](https://img.shields.io/badge/GitHub-LifeClaw-181717?logo=github)](https://github.com/Eli-yu-first/LifeClaw)
-[![GitHub](https://img.shields.io/badge/GitHub-LifeClaw%20Mobile-181717?logo=github)](https://github.com/Eli-yu-first/LifeClaw-mobile-app)
+[![GitHub](https://img.shields.io/badge/GitHub-LifeClaw%20Mobile-181717?logo=github)](https://github.com/Eli-yu-first/openclaw-lifelog-app)
 
 ### Features
 
